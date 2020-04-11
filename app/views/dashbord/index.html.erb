@@ -1,0 +1,10 @@
+<% content_for :top_content do %>
+  <div class="jumbotron">
+    <div class="container">
+      <h1> Doctor Dashboard</h1>
+      <% if doctor_signed_in? %>
+        <%= link_to "Logout", destroy_doctor_session_path, method: :delete  %>
+      <% end %>
+    </div>
+  </div>
+<% end %>	

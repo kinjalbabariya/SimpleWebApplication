@@ -1,0 +1,14 @@
+<% content_for :top_content do %>
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Welcome </h1>
+      <p>Register to get started.</p>
+      <p>
+        <%= link_to 'Register Doctor', new_doctor_registration_path, class: 'btn btn-primary btn-lg' %><br/>
+        <%= link_to "Log in as a Doctor", new_doctor_session_path, class: 'btn btn-primary btn-lg' %><br />
+        <%= link_to 'Register Patient', new_patient_registration_path, class: 'btn btn-primary btn-lg' %><br />
+        <%= link_to "Log in as a Patient", new_patient_session_path, class: 'btn btn-primary btn-lg' %><br />
+      </p>
+    </div>
+  </div>
+<% end %>
