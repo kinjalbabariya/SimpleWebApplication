@@ -87,5 +87,5 @@ test:
 production:
   <<: *default
   database: SimpleWebApplication_production
-  username: SimpleWebApplication
-  password: <%= ENV['SIMPLEWEBAPPLICATION_DATABASE_PASSWORD'] %>
+  username: admin
+  password: admin

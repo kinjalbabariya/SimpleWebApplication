@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_11_132851) do
+ActiveRecord::Schema.define(version: 2020_04_12_091437) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "doctor_availabilies", force: :cascade do |t|
+    t.bigint "doctor_id"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.integer "interval", default: 1, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["doctor_id"], name: "index_doctor_availabilies_on_doctor_id"
+  end
 
   create_table "doctors", force: :cascade do |t|
     t.string "name"
@@ -44,4 +54,5 @@ ActiveRecord::Schema.define(version: 2020_04_11_132851) do
     t.index ["reset_password_token"], name: "index_patients_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "doctor_availabilies", "doctors"
 end

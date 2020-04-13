@@ -8,5 +8,12 @@ Rails.application.routes.draw do
    }
 
   root to: 'home#index'
+  resources :appointments
+
+  resources :doctor_patients
+
+  resources :patients
+
+  resources :doctor
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
